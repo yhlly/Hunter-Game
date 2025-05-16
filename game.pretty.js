@@ -1,21 +1,3 @@
-/**
- * COMP284 Assignment 2: Treasure Hunter Game
- *
- * This JavaScript file implements a simple treasure hunter game with three stages:
- * 1. Setup: Player places a treasure hunter, monsters, obstacles, and treasures on the grid
- * 2. Play: Player controls the hunter while computer controls monsters to collect treasures
- * 3. End: Game determines the winner based on scores and conditions
- *
- * The game is played on a 10×10 grid surrounded by an impenetrable fence.
- * 
- * Image attributions: 
- * The images for representation of hunter, monster, obstacle objects have been obtained from 
- * ChatGPT DALL-E 3: Generate three images for hunter, monster and obstacle to display for the game
- * OpenAI, ChatGPT DALL-E 3 29 April 2025 Version.
- * https://chatgpt.com/chat [accessed 30 April 2025].
- */
-
-
 // Game configuration constants - can be modified to change grid size
 const GRID_WIDTH  = 10;
 const GRID_HEIGHT = 10;
