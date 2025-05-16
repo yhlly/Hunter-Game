@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang='en-GB'>
+   <!-- 
+   COMP284 Assignment 2: Treasure Hunter Game
+   
+   This HTML file provides the structure and styling for the treasure hunter game.
+   The game has three stages: setup, play, end
+   
+   Elements are structured as follows:
+   - Header section with game title
+   - Status section displaying current stage, round, treasures, and scores
+   - Instruction section for user guidance
+   - Control buttons for game flow
+   - Message area for feedback
+   - Game grid area rendered as an HTMLtable
+   -->
+   <head>
+      <meta charset="utf-8">
+      <title>Treasure Hunter Game</title>
+      <style>
+         body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+         }
+         table { 
+            border-collapse: collapse; 
+            margin: 0 auto;
+            align: center;
+         }
+         td { 
+            border: 1px solid black; 
+            width: 30px; 
+            height: 30px; 
+            text-align: center;
+         }
+         .fence {
+            background-color: darkgrey;
+         }
+         button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+         }
+         #grid {
+            margin: 0 auto;
+            border-collapse: collapse;
+         }
+         #message {
+            height: 20px;
+            margin: 10px 0;
+            font-weight: bold;
+         }
+         img {
+            width: 28px;
+            height: 28px;
+            vertical-align: middle;
+         }
+      </style>
+   </head>
+   <body>
+      <!-- Game title header -->
+      <h1>Treasure Hunter Game</h1>   
+      
+      <!-- Game stage indicator (Setup, Play, or End) -->
+      <div id="stage">Stage: Setup</div>
+      
+      <!-- Status panel showing game information -->
+      <div id="status">
+         <!-- Round counter, hidden during setup -->
+         <div id="round" style="display: none;">
+            Round: <div id="roundNo" style="display: inline;">0</div>
+         </div>
+         
+         <!-- Treasures remaining counter -->
+         <div id="treasure">
+            Treasures: <div id="treasuresCount" style="display: inline;">0</div>
+         </div>
+         
+         <!-- Score display, hidden during setup -->
+         <div id="score" style="display: none;">
+            Your Score: <div id="userScore" style="display: inline;">0</div> vs
+            Computer Score: <div id="monsterScore" style="display: inline;">0</div>
+         </div>
+      </div>
+      
+      <!-- Instruction panel for player guidance -->
+      <div id="instruction">
+         Click on a cell and press key:<br>
+         h - Place the treasure hunter <img src="hunter.png" style="width: 20px; height: 20px;"><br>
+         m - Place a monster <img src="monster.png" style="width: 20px; height: 20px;"><br>
+         o - Place an obstacle <img src="obstacle.png" style="width: 20px; height: 20px;"><br>
+         1~9 - Place a treasure with value 1-9<br>
+      </div>
+      
+      <!-- Game control buttons -->
+      <div id="buttons">
+         <!-- End Setup button transitions from setup to play stage -->
+         <button id="endSetupButton">End Setup</button>
+         
+         <!-- End Game button ends the play stage early -->
+         <button id="endGameButton" style="display: none;">End Game</button>
+      </div>
+      
+      <!-- Message area for game feedback and errors -->
+      <div id="message"></div>
+      
+      <!-- Game grid container -->
+      <table id="grid"></table>
+      
+      <!-- Attribution for images used in the game -->
+      <div id="attribution" style="margin-top: 20px; font-size: 12px; color: #666;">
+         Images were created using ChatGPT DALL-E 3,
+         OpenAI's image generation model, April 2025.   
+      </div>
+      
+      <!-- Link to JavaScript game logic -->
+      <script src="game.js"></script>
+   </body>
+</html>
